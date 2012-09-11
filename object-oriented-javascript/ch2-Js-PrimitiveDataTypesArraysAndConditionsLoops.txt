@@ -1,0 +1,163 @@
+
+5 Primitive Data Types,
+
+[Number],this includes floating point numbers as well as integers,e.g. 1,100,3.14
+
+[String],any number of characters,e.g. "a',"one","one 2 three"
+
+[Boolean], true or false
+
+[Undefined],when you try to access a variable that doesn't exist,you get the special value 'undefined'.
+The same will happen when you have declared a variable,but not given it a value yet.JavaScript will initialize it 
+be behind the scenes,with the value 'undefined'.
+
+[Null],this is another special data type that can have only one value,the null value.
+
+
+Any value that doesn't belong to one of the five primitive types listed above is an object.
+Even 'null' is considered an object,which is a little awkward-having an object(something)that is actually nothing.
+
+
+Just remember that in JavaScript the data types are either:Primitive (the five types listed above),or Non-primitive(objects)
+
+
+
+Finding out the Value Type:
+The return values of using [typeof] can be one of the following--"number","string","boolean","undefined","object",or "function".
+
+
+
+Octal[starts with a 0] and Hexadecimal[starts with 0x] Numbers
+>>>var n8 = 0377;
+>>>typeof n8;
+"number"
+>>>n8;
+255
+
+>>>var n16 = 0xff;
+>>>typeof n16;
+"number"
+>>>n16;
+255
+
+
+
+Exponent Literals指数
+>>>1e1
+10
+>>>1e+1
+10
+>>>2e+3
+2000
+>>>typeof 2e+3;
+"number"
+>>>2e-3
+0.002
+
+
+
+Infinity 无限大
+JavaScript 最大数1.7976931348623157e+308和最小数5e-324
+>>>1e309
+Infinity
+>>>1e308
+1e+308
+
+被0除，得到无限大infinity
+>>>1/0
+Infinity
+
+
+
+NaN (Not a Number),NaN is a special value that is also a number.
+>>>Infinity - Infinity
+NaN
+>>>Infinity -999999999
+Infinity
+
+>>>typeof NaN
+"number"
+
+You get 'NaN' when you try to perform an operation that assumes numbers but the operation fails.
+>>>var a = 10 * "f";
+>>>a
+NaN
+
+
+NaN is contagious,so if you have even only one NaN in your arithmetic operation,
+the whole result goes down the drain.
+>>> 1 + 2 + NaA
+NaN
+
+
+
+===Strings===========================Strings==================================
+In JavaScript,any value placed between single or double quotes is considered a string.
+
+>>> var s= "some characters";
+>>> typeof s;
+"string"
+
+>>> var s= '1';
+>>> typeof s;
+"string"
+
+
+String Conversions
+When you use a number-like string as an operand in an arithmetic operation,the string is converted to a number behind the scenes.(##This works for all operations except addition,because of addition's ambiguity##)
+
+>>> var s='1';s = 1 + s; typeof s;
+"string"
+
+>>> var s='1'; s++; typeof s;
+"number"
+
+>>> var s='1'; s=s-1; typeof s;
+"number"
+>>>s
+0
+>>>
+
+A lazy way to convert any number-like string to a number is to multiply it by 1(
+a better way is to use a function called 'parseInt(string,radix[2|8|16])')
+
+>>> var s='1';s = 1 * s; typeof s;
+"number"
+>>>
+
+If the conversion fails,you'll get 'NaN':
+>>> var s='1 abc';
+>>> s*1
+NaN
+>>>
+
+A lazy way to convert anything to a string is to concatenate it with an empty string.
+>>> var n = 1; typeof n;
+"number"
+>>> n = ""+n; typeof n;
+"string"
+>>>
+
+Booleans and Logical Operators
+>>> !!null
+false
+>>> !!undefined
+false
+>>> !!0
+false
+>>> !!NaN
+false
+>>> !!false
+false
+>>> !!""
+false
+>>>
+
+These above six values are sometimes refered to sa being falsy,while all others are truthy(including,
+for example,the strings "0"," ", and "false").
+>>> !!" "
+true
+
+
+
+------------Day 1---------------------------------------
